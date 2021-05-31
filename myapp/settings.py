@@ -93,10 +93,21 @@ SITE_ID = 1
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd2vllclvj3au01',
+        'USER': 'xhdgmpyntmpuar',
+        'PASSWORD': '9cd0be18713c88195692b20523126fdc76d8b7bb3cff29eee358676b4fb08323',
+        'HOST': 'ec2-54-243-92-68.compute-1.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
