@@ -100,6 +100,7 @@ SITE_ID = 1
 #     }
 # }
 
+# PostgreSQL for Heroku
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
