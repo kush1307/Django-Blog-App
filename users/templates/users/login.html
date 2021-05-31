@@ -1,5 +1,7 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
+{% load socialaccount %}
+{% load account %}
 
 {% block content %}
     <div class="content-section">
@@ -11,6 +13,7 @@
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Login</button>
+                <a href="{% provider_login_url 'github' %}" class="fa fa-github" style="margin-left: 10px; padding: 5px; font-size: 30px; background: #333333; color: #ffffff"><span style="font-size: 20px; margin-left: 10px">Github</span></a>
                 <small class="text-muted ml-2">
                     <a href="{% url 'password_reset' %}">Forgot Password?</a>
                 </small>
