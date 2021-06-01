@@ -103,6 +103,30 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
