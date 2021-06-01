@@ -13,12 +13,16 @@
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Login</button>
-                <a href="{% provider_login_url 'github' %}" class="fa fa-github" style="margin-left: 10px; padding: 5px; font-size: 30px; background: #333333; color: #ffffff; text-decoration: None"><span style="font-size: 20px; margin-left: 10px">Github</span></a>
-                <a href="{% provider_login_url 'google' %}" class="fa fa-google" style="margin-left: 10px; padding: 5px; font-size: 30px; background: #dd4b39; color: #ffffff; text-decoration: None"><span style="font-size: 20px; margin-left: 10px">Google</span></a>
-                <a href="{% provider_login_url 'facebook' %}" class="fa fa-facebook" style="margin-left: 10px; padding: 5px; font-size: 30px; background: #3B5998; color: #ffffff; text-decoration: None"><span style="font-size: 20px; margin-left: 10px">Facebook</span></a>
                 <small class="text-muted ml-2">
                     <a href="{% url 'password_reset' %}">Forgot Password?</a>
                 </small>
+                <hr>
+                <p style="margin-left: 340px">OR</p>
+                <hr>
+                <p style="margin-left: 320px">Login With</p>
+                <a href="{% provider_login_url 'github' %}" class="fa fa-github" style="margin-left: 200px; padding: 5px; font-size: 30px; background: #333333; color: #ffffff; text-decoration: None"><span style="font-size: 20px; margin-left: 10px">Github</span></a>
+                <a href="{% provider_login_url 'google' %}" class="fa fa-google" style="margin-left: 10px; padding: 5px; font-size: 30px; background: #dd4b39; color: #ffffff; text-decoration: None"><span style="font-size: 20px; margin-left: 10px">Google</span></a>
+                <a href="{% provider_login_url 'facebook' %}" class="fa fa-facebook" style="margin-left: 10px; padding: 5px; font-size: 30px; background: #3B5998; color: #ffffff; text-decoration: None"><span style="font-size: 20px; margin-left: 10px">Facebook</span></a>
             </div>
         </form>
         <div class="border-top pt-3">
