@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
@@ -68,6 +69,18 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
+
+class PostCommentCreateView(LoginRequiredMixin, CreateView):
+    model = Comment
+    template_name = "blog/post_comment_add.html"
+    fields = ['body']
+    success_url = reverse_lazy('blog-home')
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        form.instance.name = self.request.user
+        return super().form_valid(form)
 
 
 def about(request):

@@ -16,6 +16,26 @@
         </div>
         <h2 class="article-title">{{ object.title }}</h2>
         <p class="article-content">{{ object.content }}</p>
+        <br>
+        <hr>
+        <h2>Comments..</h2>
+        {% if not object.comments.all %}
+            No Comments Yet... <a href="{% url 'post-add-comment' object.id %}">Add One</a>
+        {% else %}
+            <a href="{% url 'post-add-comment' object.id %}">Add Comments</a>
+            <br><br>
+            {% for comment in object.comments.all %}
+                <strong>
+                    {{ comment.name }}
+                    {{ comment.date_added }}
+                </strong>
+                <br>
+                {{ comment.body }}
+                <br><br>
+            {% endfor %}
+            <a href="{% url 'post-add-comment' object.id %}">Add Comments</a>
+        {% endif %}
+
       </div>
     </article>
 {% endblock content %}
